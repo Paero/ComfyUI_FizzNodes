@@ -91,7 +91,7 @@ def interpolate_prompt_series(animation_prompts, max_frames, start_frame, pre_te
 
     # in case there is only one keyed promt, set all prompts to that prompt
     if len(sorted_prompts) == 1:
-        for i in range(0, len(cur_prompt_series) - 1):
+        for i in range(0, len(cur_prompt_series)):
             current_prompt = sorted_prompts[0][1]
             cur_prompt_series[i] = str(current_prompt)
             nxt_prompt_series[i] = str(current_prompt)
@@ -295,13 +295,13 @@ def BatchInterpolatePromptsSDXL(animation_promptsG, animation_promptsL, max_fram
 
     # in case there is only one keyed promt, set all prompts to that prompt
     if len(sorted_prompts_G) - 1 == 0:
-        for i in range(0, len(cur_prompt_series_G) - 1):
+        for i in range(0, len(cur_prompt_series_G)):
             current_prompt_G = sorted_prompts_G[0][1]
             cur_prompt_series_G[i] = str(pre_text_G) + " " + str(current_prompt_G) + " " + str(app_text_G)
             nxt_prompt_series_G[i] = str(pre_text_G) + " " + str(current_prompt_G) + " " + str(app_text_G)
 
     if len(sorted_prompts_L) - 1 == 0:
-        for i in range(0, len(cur_prompt_series_L) - 1):
+        for i in range(0, len(cur_prompt_series_L)):
             current_prompt_L = sorted_prompts_L[0][1]
             cur_prompt_series_L[i] = str(pre_text_L) + " " + str(current_prompt_L) + " " + str(app_text_L)
             nxt_prompt_series_L[i] = str(pre_text_L) + " " + str(current_prompt_L) + " " + str(app_text_L)
